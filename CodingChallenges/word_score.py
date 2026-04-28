@@ -1,3 +1,4 @@
+"""
 # Store the sentence we want to work with
 text = "A quick brown fox jumps over the lazy dog."
 
@@ -23,4 +24,18 @@ result_02.sort()
 inp = input("Type which letter you are looking for: ").lower()
 
 # Print the score of the letter
-print(f"Word score of {inp}: ", result_02.index(inp) + 1)
+print(f"Word score of {inp}: ", result_02.index(inp) + 1) """
+
+def get_word_score(word):
+  text = "A quick brown fox jumps over the lazy dog."
+  result = text.lower().replace(" ","").replace(".","")
+  result_02 = []
+  for i in result:
+    if i not in result_02:
+      result_02.append(i)
+
+  result_02.sort()
+  return result_02.index(word) + 1
+
+inp = input("type which letter you are looking for: ").lower()
+print(f"word score of {inp}: ", get_word_score(inp))
